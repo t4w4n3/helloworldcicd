@@ -6,7 +6,7 @@ import spock.lang.Specification
 class HelloWorldSpec extends Specification implements DomainUnitTest<HelloWorld> {
 
     def setup() {
-        new BootStrap().init()
+        new BootStrap().init.call()
     }
 
     def cleanup() {
@@ -14,7 +14,7 @@ class HelloWorldSpec extends Specification implements DomainUnitTest<HelloWorld>
 
     void "There is one hello world with a valid message"() {
         when:
-        def helloWorld = HelloWorld.findByMessageNotIsEmpty()
+        def helloWorld = HelloWorld.findByMessageIsNotNull()
 
         then:
         helloWorld != null

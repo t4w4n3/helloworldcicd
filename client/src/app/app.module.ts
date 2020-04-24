@@ -9,13 +9,15 @@ import {NavService} from "./nav/nav.service";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {HttpClientModule} from "@angular/common/http";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import { HelloWorldComponent } from './hello-world/hello-world.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
-    NavComponent
+    NavComponent,
+    HelloWorldComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,7 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
     HttpClientModule,
     NgbModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, NavService],
+  providers: [HttpClientModule, {provide: LocationStrategy, useClass: HashLocationStrategy}, NavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
