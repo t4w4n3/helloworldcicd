@@ -1,11 +1,9 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {IndexComponent} from "./index/index.component";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {HelloWorldComponent} from "./hello-world/hello-world.component";
 
 const routes: Routes = [
-  {path: '', redirectTo: 'index', pathMatch: 'full'},
-  {path: 'index', component: IndexComponent},
+  {path: '', redirectTo: 'hello-world', pathMatch: 'full'},
   {path: 'hello-world', component: HelloWorldComponent},
 ];
 
@@ -13,4 +11,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
